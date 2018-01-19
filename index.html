@@ -4,45 +4,407 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <title>Papereum - Pure utility token</title>
+    <title>Pure utility token - Papereum</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/manifest.json">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffcc33">
+    <link rel="preconnect" href="https://www.gstatic.com/" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preconnect" href="https://ajax.googleapis.com/" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
     <meta name="theme-color" content="#ffcc33">
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M39HP7G');</script>
     <style>
-        html {
-            height: 100%;
-        }
-
-        html, body {
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        blockquote,
+        ul,
+        li {
             margin: 0;
             padding: 0;
         }
 
-        body {
-            background: #ffcc33;
-            background: linear-gradient(to right, #ffb347, #ffcc33);
-            color: black;
+        html {
+            -webkit-font-smoothing: antialiased;
         }
 
-        .welcome {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            margin-top: -100px;
-            margin-left: -128px;
+        body {
+            font-family: 'EB Garamond', serif;
+            font-size: 17.4pt;
+            background: #ffcc33;
+            background: linear-gradient(to right, #ffb347, #ffcc33);
+            color: #000;
+        }
+
+        h1 span,
+        h2 span,
+        h3 span {
+            text-transform: lowercase;
+        }
+
+        ul,
+        p {
+            font-variant-ligatures: common-ligatures;
+            font-variant-numeric: oldstyle-nums;
+            font-feature-settings: "liga", "clig", "onum";
+            margin-bottom: 1.4em;
+            line-height: 1.4;
+        }
+
+        .page {
+            padding: 0 12px;
+        }
+
+        .frame {
+            padding-bottom: 3em;
+            overflow: auto;
+            position: relative;
+        }
+
+        .page-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .table a,
+        .section a {
+            color: #000;
+        }
+
+        .section {
+            max-width: 680px;
+        }
+
+        .logo {
+            display: block;
+            position: absolute;
+            top: -46px;
+            left: 0;
+            background: url(images/papereum.svg) 0 20px no-repeat;
+            background-size: 100%;
+            width: 128px;
+            height: 200px;
+            transition: all .3s ease;
+            cursor: pointer;
+        }
+
+        .logo:hover {
+            top: 4px;
+        }
+
+        .introduction h1 {
+            margin: 0 0 0 -0.02em;
+            line-height: 1.125;
+            font-size: 250%;
+            padding-bottom: .05em;
+        }
+
+        .introduction h2 {
+            font-size: 1.2em;
+            padding: 0 0 1.6em;
+            margin: 0;
+            font-weight: normal;
+            font-style: italic;
+            color: #444;
+        }
+
+        .introduction ul,
+        .introduction li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .frame-top {
+            background: url(images/frame-top.jpg) 50% 0 repeat-x;
+            background-size: 2100px;
+            height: 240px;
+        }
+
+        .frame-bottom {
+            background: url(images/frame-bottom.jpg) 50% 100% repeat-x;
+            background-size: 2100px;
+            height: 230px;
+        }
+
+        .header-columns {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 5.5em;
+            min-height: 485px;
+        }
+
+        .header-text {
+            font-size: 14.4pt;
+            margin: 3em 0 -2em;
+            white-space: nowrap;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .g-white {
+            background: #fff;
+        }
+
+        .g-grey {
+            background: #ededed;
+        }
+
+        .g-black-white,
+        .g-black {
+            background: #232526;
+            color: #ffcc00;
+        }
+
+        .g-black-white,
+        .g-black-white a {
+            color: #fff;
+        }
+
+        .form {
+            width: 300px;
+            height: 0;
+            transition: all 0.15s ease-in-out;
+
+            background: black;
+            color: #ededed;
+
+            border-radius: 10px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+
+            overflow: hidden;
+        }
+
+        .form-body {
+            padding: .8em 1em;
+        }
+
+        .times {
+            display: flex;
+            justify-content: space-between;
+            padding: .8em 0 1.2em;
+        }
+
+        @media (max-width: 860px) {
+            .section aside {
+                position: relative;
+                padding-bottom: 2em;
+            }
+
+            .header-columns {
+                display: block;
+            }
+
+            .form {
+                width: auto;
+                max-width: 400px;
+                margin: 2em auto;
+            }
+
+            .page blockquote {
+                margin-left: 0;
+            }
+
+            .page ul {
+                margin-left: 1em;
+            }
         }
     </style>
 </head>
-<body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M39HP7G"
-                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<div class="welcome"><img src="papereum.svg" width="256" height="191"/></div>
+<body>
+<div class="g-yellow">
+    <div class="page frame">
+        <div class="page-inner">
+            <div class="header">
+                <a href="/" class="logo"></a>
+            </div>
+            <div class="header-columns">
+                <div class="section introduction">
+                    <h1>Pure utility token</h1>
+                    <h2>Get your cryptomania box</h2>
+                    <ul>
+                        <li><a href="https://drive.google.com/open?id=1cTsujS261PxZi3muSDa4JKaRXf46-yYj" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.363 2c4.155 0 2.637 6 2.637 6s6-1.65 6 2.457v11.543h-16v-20h7.363zm.826-2h-10.189v24h20v-14.386c0-2.391-6.648-9.614-9.811-9.614zm4.811 13h-2.628v3.686h.907v-1.472h1.49v-.732h-1.49v-.698h1.721v-.784zm-4.9 0h-1.599v3.686h1.599c.537 0 .961-.181 1.262-.535.555-.658.587-2.034-.062-2.692-.298-.3-.712-.459-1.2-.459zm-.692.783h.496c.473 0 .802.173.915.644.064.267.077.679-.021.948-.128.351-.381.528-.754.528h-.637v-2.12zm-2.74-.783h-1.668v3.686h.907v-1.277h.761c.619 0 1.064-.277 1.224-.763.095-.291.095-.597 0-.885-.16-.484-.606-.761-1.224-.761zm-.761.732h.546c.235 0 .467.028.576.228.067.123.067.366 0 .489-.109.199-.341.227-.576.227h-.546v-.944z"/></svg> Whitepaper (Version 0.1)</a></li>
+                        <li><a href="https://www.instagram.com/papereum/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> Papereum token collection</a></li>
+                        <li><a href="https://twitter.com/papereum" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg> Creation process</a></li>
+                    </ul>
+                </div>
+                <div class="form">
+                    <div class="form-border"></div>
+                    <div class="form-body">
+                        <div class="form-header"><b>Yearly sale</b> <span>stage starts in:</span></div>
+                        <div class="times">
+                            <div class="times-item">
+                                <b id="countdownDays">00</b>
+                                <span>days</span>
+                            </div>
+                            <div class="times-dot">:</div>
+                            <div class="times-item">
+                                <b id="countdownHours">00</b>
+                                <span>hours</span>
+                            </div>
+                            <div class="times-dot">:</div>
+                            <div class="times-item">
+                                <b id="countdownMinutes">00</b>
+                                <span>minutes</span>
+                            </div>
+                            <div class="times-dot">:</div>
+                            <div class="times-item">
+                                <b id="countdownSeconds">00</b>
+                                <span>seconds</span>
+                            </div>
+                        </div>
+                        <div class="form-line"></div>
+                        <div class="buttons">
+                            <form id="form">
+                                <input type="text" id="email" placeholder="Enter your e-mail">
+                                <button type="submit" id="submit">Register for ICO</button>
+                                <p>We will notify you once ICO has been started</p>
+                            </form>
+                        </div>
+                        <div class="form-line"></div>
+                        <div class="tokens">
+                            <b>
+                                <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        viewBox="0 0 13.226 22.591181"
+                                        height="38px"
+                                        width="26px">
+                                    <g
+                                            transform="translate(51.21419,-137.53774)"
+                                            id="layer1">
+                                        <path
+                                                d="m -48.96417,149.11353 c 1.16523,1.02552 2.6924,1.64941 4.36298,1.64941 3.64649,0 6.613,-2.96624 6.613,-6.61247 0,-3.64622 -2.96651,-6.61273 -6.613,-6.61273 -3.64649,0 -6.613,2.96625 -6.613,6.61273 v 15.97845 h 13.20827 v -2.25001 h -10.95825 v -1.93966 h 10.95825 v -2.25002 h -10.95825 z m 4.36298,-9.32577 c 2.40586,0 4.36298,1.95712 4.36298,4.36271 0,2.40559 -1.95712,4.36245 -4.36298,4.36245 -2.40586,0 -4.36298,-1.95686 -4.36298,-4.36245 0,-2.40559 1.95712,-4.36271 4.36298,-4.36271 z"
+                                                id="path815"/>
+                                    </g>
+                                </svg>
+                                100 000</b>
+                            <span>tokens will be on sale</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-text">100% of PPRM tokens are backed by a valuable object of art exhibited in the galleries of contemporary
+                art around the world.</div>
+        </div>
+    </div>
+</div>
+<script>
+    var upgradeTime = new Date('19 Feb 2018') - new Date();
+    var seconds = Math.floor(upgradeTime / 1000);
+
+    function timer() {
+        var days = Math.floor(seconds / 24 / 60 / 60);
+        var hoursLeft = Math.floor((seconds) - (days * 86400));
+        var hours = Math.floor(hoursLeft / 3600);
+        if (hours < 10) {
+            hours = "0" + hours;
+        }
+        var minutesLeft = Math.floor((hoursLeft) - (hours * 3600));
+        var minutes = Math.floor(minutesLeft / 60);
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+        var remainingSeconds = seconds % 60;
+        if (remainingSeconds < 10) {
+            remainingSeconds = "0" + remainingSeconds;
+        }
+        countdownDays.textContent = days;
+        countdownHours.textContent = hours;
+        countdownMinutes.textContent = minutes;
+        countdownSeconds.textContent = remainingSeconds;
+        if (seconds === 0) {
+            clearInterval(countdownTimer);
+        } else {
+            seconds--;
+        }
+    }
+
+    var countdownTimer = setInterval('timer()', 1000);
+</script>
+<noscript id="deferred-styles">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</noscript>
+<script>
+    var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement);
+        addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+        window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+    else window.addEventListener('load', loadDeferredStyles);
+</script>
+<script>
+    WebFontConfig = {
+        google: {
+            families: [
+                'EB Garamond:400,400i,600',
+                'Open Sans:600,800',
+                'Inknut Antiqua'
+            ]
+        }
+    };
+
+    (function(d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+    })(document);
+</script>
+<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-database.js"></script>
+<script>
+    firebase.initializeApp({
+        apiKey: "AIzaSyCFEyNolN1pmlAusPa12EHRIFzb6OCnj8A",
+        authDomain: "papereum-web.firebaseapp.com",
+        databaseURL: "https://papereum-web.firebaseio.com",
+        projectId: "papereum-web",
+        storageBucket: "papereum-web.appspot.com"
+    });
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var text = email.value.trim();
+        var date = new Date().toISOString();
+        var re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+        if (text && re.test(text.toLowerCase())) {
+            email.classList.remove('error');
+            email.disabled = true;
+            submit.disabled = true;
+            firebase.database().ref('subscriptions/')
+                .push({
+                    email: text,
+                    date: date
+                })
+                .then(function () {
+                    submit.disabled = false;
+                    email.disabled = false;
+                    email.value = '';
+                    form.classList.add('submitted');
+                }, function () {
+                    submit.disabled = false;
+                    email.disabled = false;
+                    email.classList.add('error');
+                    email.focus();
+                });
+        } else {
+            email.classList.add('error');
+            email.focus();
+        }
+    }, false);
+</script>
 </body>
 </html>
