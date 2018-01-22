@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta property="og:image" content="https://papereum.com/images/papereum.png"/>
     <title>Pure utility token - Papereum</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -144,7 +145,7 @@
         }
 
         .g-white {
-            background: #fff;
+            background: #fdfdfd;
         }
 
         .g-grey {
@@ -209,6 +210,11 @@
 
             .page ul {
                 margin-left: 1em;
+            }
+
+            .header-text {
+                white-space: normal;
+                overflow: auto;
             }
         }
     </style>
@@ -329,6 +335,113 @@
 
     var countdownTimer = setInterval('timer()', 1000);
 </script>
+<div class="frame-top"></div>
+<div class="page frame g-white" id="box">
+    <div class="page-inner">
+        <div class="section" id="papereum">
+            <h1>What is papereum?
+                <a href="#papereum" title="Right click to copy a link to #papereum" class="section-id">#</a></h1>
+            <aside><a href="sounds/Papereum%20US.mp3" onclick="new Audio(this.href).play(); return false;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 9v6h-1v-6h1zm13-7l-9 5v2.288l7-3.889v13.202l-7-3.889v2.288l9 5v-20zm-11 5h-5v10h5v-10zm13.008 2.093c.742.743 1.2 1.77 1.198 2.903-.002 1.133-.462 2.158-1.205 2.9l1.219 1.223c1.057-1.053 1.712-2.511 1.715-4.121.002-1.611-.648-3.068-1.702-4.125l-1.225 1.22zm2.142-2.135c1.288 1.292 2.082 3.073 2.079 5.041s-.804 3.75-2.096 5.039l1.25 1.254c1.612-1.608 2.613-3.834 2.616-6.291.005-2.457-.986-4.681-2.595-6.293l-1.254 1.25z"/></svg> How Google pronounces Papereum</a></aside>
+            <p>Papereum is a project of creating installation in the form of a pyramid depicting the growing interest
+                in cryptocurrency, in other words, real cryptomania. During summer&ndash;autumn 2018 this installation is
+                planned to be exhibited in the galleries of contemporary art worldwide. After that any holder of the
+                tokens&mdash;which we call Papereum&mdash;can exchange them for the installation or its parts, thus obtaining
+                valuable piece of art. </p>
+        </div>
+        <div>
+            <img src="images/papereum-concept.jpg" alt="" width="100%">
+            <p>Figure 1. Sketch of the initial concept</p>
+        </div>
+        <div class="section">
+            <p>The installation consists of seven levels assembled from 200 boxes of cryptomania&mdash;each containing 500
+                numbered sheets of paper&mdash;which can be exchanged 1 to 1 for the Papereum token.</p>
+            <h2>What is cryptomania box?
+                <a href="#box" title="Right click to copy a link to #box" class="section-id">#</a></h2>
+            <blockquote>
+                <p>Cryptomania box can be used hanging or standing to fit in the space available. NB! Different wall
+                    materials require different types of fasteners. Use fasteners suitable for the walls in your
+                    home.</p>
+            </blockquote>
+            <p>The cryptomania box is a building block of the pyramid which consists of 200 unique display blocks with
+                the dimensions:</p>
+            <ul>
+                <li><span>Width: 14 cm</span></li>
+                <li><span>Depth: 15 cm</span></li>
+                <li><span>Height: 22.5 cm</span></li>
+            </ul>
+            <p>Each box consists of 500 consecutively numbered sheets of paper. Each piece is numbered manually using
+                metal automatic numbering machine Reiner B6. The number consists of six digits, typed using figure style
+                <span class="antiqua">Antique</span>, figure size 4.5mm, black ink No 200182-000. All numbers are unique
+                and do not repeat in between the boxes.</p>
+        </div>
+        <div>
+            <video id="videoNumbering" loop style="width: 100%;">
+                <source src="https://firebasestorage.googleapis.com/v0/b/papereum-web.appspot.com/o/Papereum-numbering.mp4?alt=media&token=1914eba3-98f8-4e94-b0ab-01578cc53d21" type="video/mp4">
+            </video>
+            <script>
+                (function() {
+                    window.addEventListener('scroll', function(e) {
+                        var boundingClientRect = videoNumbering.getBoundingClientRect();
+                        if (boundingClientRect) {
+                            var videoTop = boundingClientRect.top;
+                            var videoHeight = videoNumbering.offsetHeight;
+
+                            if (videoTop > -videoHeight && videoTop < window.innerHeight) {
+                                videoNumbering.play();
+                            } else {
+                                videoNumbering.pause();
+                            }
+                        }
+                    });
+                })();
+            </script>
+        </div>
+        <div class="section" style="padding-top: 2em;">
+            <p>The collection consists of 100 000 sheets. All of them are numbered, photographed and posted on
+                Instagram. At any time you can check them here
+                <a href="https://www.instagram.com/papereum/">https://www.instagram.com/papereum/</a>.</p>
+        </div>
+    </div>
+</div>
+<div class="frame-bottom"></div>
+<div class="page frame g-black" id="process">
+    <div class="page-inner">
+        <div class="section">
+            <h1>How <span>to</span> get cryptomania box?
+                <a href="#process" title="Right click to copy a link to #process" class="section-id">#</a></h1>
+            <p>After the installation has travelled around the world, it will be taken apart and the parts will be sent
+                to the holders of the tokens in memory about this fantastic period of cryptocurrency mania 2018.</p>
+            <p>Starting from December 1, 2018 each holder of the Papereum token will be able to provide their tokens and
+                exchange them for their parts of the collection as follows:</p>
+            <ul>
+                <li><span>If the number of tokens is greater than or equal to 500, then the entire cryptomania box is sent to the token-holder. The remained tokens are sent in the form of other boxes or numbered sheets. In this case, the delivery is carried out by DHL, UPS, FEDex or TNT courier service.</span>
+                </li>
+                <li><span>If the number of tokens is less than 500, but greater than or equal to 10, then the holder will be sent consecutively numbered sheets collected in 10 pieces. In this case, the dispatch will also be carried out by courier service.</span>
+                </li>
+                <li>
+                    <span>If the quantity is less than 10 sheets, they will be sent in one envelope by registered letter.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="line"></div>
+<div class="page frame g-grey">
+    <div class="page-inner">
+        <div class="section" id="roadmap">
+            <h1>Roadmap
+                <a href="#roadmap" title="Right click to copy a link to #roadmap" class="section-id">#</a></h1>
+            <p>Our project roadmap shows the great things we're working on and the directions we'll be taking to fulfill our project vision.</p>
+        </div>
+        <img src="images/roadmap.png" alt="" width="100%">
+    </div>
+</div>
+<div class="line"></div>
+<div class="page g-black footer">
+    <div class="page-inner">
+        <div>2018 &copy; Papereum</div>
+    </div>
+</div>
 <noscript id="deferred-styles">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </noscript>
