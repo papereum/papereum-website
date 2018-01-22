@@ -362,7 +362,7 @@ h3:hover .section-id {
 .social ul {
     display: flex;
     justify-content: space-between;
-    width: 150px;
+    width: 120px;
 }
 
 .social a path {
@@ -371,11 +371,6 @@ h3:hover .section-id {
 
 .social a:hover path {
     fill: #eb3349;
-}
-
-.social svg {
-    width: 32px;
-    height: 32px;
 }
 
 .logo {
@@ -663,6 +658,12 @@ h3:hover .section-id {
     border-top: 1px solid #b3b3b3;
     border-bottom: 1px solid #b3b3b3;
     text-align: center;
+}
+
+.timeline a,
+.timeline a:hover {
+    background: none;
+    padding-bottom: 0;
 }
 
 @media (max-width: 860px) {
