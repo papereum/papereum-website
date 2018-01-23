@@ -381,24 +381,28 @@
                 and do not repeat in between the boxes.</p>
         </div>
         <div>
-            <video id="videoNumbering" loop style="width: 100%;">
-                <source src="https://firebasestorage.googleapis.com/v0/b/papereum-web.appspot.com/o/Papereum-numbering.mp4?alt=media&token=1914eba3-98f8-4e94-b0ab-01578cc53d21" type="video/mp4">
+            <video id="videoNumbering" loop style="width: 100%; background-color: #dcdce0;">
+                <source src="https://firebasestorage.googleapis.com/v0/b/test-5bc39.appspot.com/o/Papereum-numbering.mp4?alt=media&token=d5e77e08-84af-4351-8a0b-2d36b2a92fd3" type="video/mp4">
             </video>
             <script>
                 (function() {
-                    window.addEventListener('scroll', function(e) {
-                        var boundingClientRect = videoNumbering.getBoundingClientRect();
-                        if (boundingClientRect) {
-                            var videoTop = boundingClientRect.top;
-                            var videoHeight = videoNumbering.offsetHeight;
+                    if (!/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                        window.addEventListener('scroll', function(e) {
+                            var boundingClientRect = videoNumbering.getBoundingClientRect();
+                            if (boundingClientRect) {
+                                var videoTop = boundingClientRect.top;
+                                var videoHeight = videoNumbering.offsetHeight;
 
-                            if (videoTop > -videoHeight && videoTop < window.innerHeight) {
-                                videoNumbering.play();
-                            } else {
-                                videoNumbering.pause();
+                                if (videoTop > -videoHeight && videoTop < window.innerHeight) {
+                                    videoNumbering.play();
+                                } else {
+                                    videoNumbering.pause();
+                                }
                             }
-                        }
-                    });
+                        });
+                    } else {
+                        videoNumbering.setAttribute('controls', 'controls');
+                    }
                 })();
             </script>
         </div>
