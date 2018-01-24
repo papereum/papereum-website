@@ -329,6 +329,7 @@ h3:hover .section-id {
 .g-black-white .table th,
 .g-black-white .table td {
     border-bottom-color: #b3b3b3;
+    color: #ededed;
 }
 
 .g-black-white path {
