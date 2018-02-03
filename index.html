@@ -699,6 +699,10 @@
                     email.classList.add('error');
                     email.focus();
                 });
+
+            if (dataLayer) {
+                dataLayer.push({'event': 'Registration'})
+            }
         } else {
             email.classList.add('error');
             email.focus();
