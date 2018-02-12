@@ -82,30 +82,6 @@ p {
     margin-right: 2px;
 }
 
-.section-id {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    -webkit-transition: all .5s ease;
-    transition: all .5s ease;
-    color: rgba(0, 0, 0, 0.15);
-    visibility: hidden;
-    position: absolute;
-    line-height: 1.15;
-    display: block;
-    width: 1em;
-    left: -1em;
-    opacity: 0;
-    top: 0;
-}
-
-h1:hover .section-id,
-h2:hover .section-id,
-h3:hover .section-id {
-    visibility: visible;
-    opacity: 1;
-}
-
 .table a,
 .section a {
     background-image: linear-gradient(gray, gray);
@@ -127,16 +103,15 @@ h3:hover .section-id {
 .section h2 a,
 .section h3 a {
     background: none;
+    text-shadow: none;
+    color: #212121;
 }
 
 .section h1 a:hover,
 .section h2 a:hover,
 .section h3 a:hover {
     background: none;
-}
-
-.section-id:hover {
-    color: #ff6d5b;
+    color: #eb3349;
 }
 
 .table {
@@ -305,7 +280,10 @@ h3:hover .section-id {
 .g-black a,
 .g-black h1,
 .g-black h2,
-.g-black h3 {
+.g-black h3,
+.g-black h1 a,
+.g-black h2 a,
+.g-black h3 a {
     color: #ffcc00;
 }
 
@@ -319,7 +297,10 @@ h3:hover .section-id {
     /*.g-black-white blockquote ul,*/
 .g-black-white h1,
 .g-black-white h2,
-.g-black-white h3 {
+.g-black-white h3,
+.g-black-white h1 a,
+.g-black-white h2 a,
+.g-black-white h3 a {
     color: #ededed;
 }
 
