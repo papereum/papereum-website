@@ -346,7 +346,7 @@ p {
 .social ul {
     display: flex;
     justify-content: space-between;
-    width: 120px;
+    width: 140px;
 }
 
 .social a path {

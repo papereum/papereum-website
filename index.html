@@ -253,7 +253,7 @@
                         <li><a href="https://www.facebook.com/papereum/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg> Follow the creation process</a></li>
                     </ul>
                     <div style="padding-top: 1em; padding-left: 1.3em;">
-                        <iframe width="237" height="130" src="https://www.youtube.com/embed/YrAer-nEnUw?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <iframe width="376" height="212" src="https://www.youtube.com/embed/YrAer-nEnUw?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="form">
@@ -407,6 +407,13 @@
         </div>
         <div class="section">
             <p>The installation to be comprised of seven layers assembled from exactly 200&nbsp;boxes of cryptomania. And every box will contain exactly 500 uniquely numbered sheets of paper that can be exchanged 1 to 1 for Papereum token.</p>
+        </div>
+        <div>
+            <img src="images/price-index-chart.png" alt="Papereum price index, historical chart and market cap" width="100%" style="border: 1px solid #dfe0e4">
+            <p>Figure 2. Prototype of Papereum price screen</p>
+        </div>
+        <div class="section">
+            <p> One of the components of the installation is a tiny computer with the display which shows Papereum price index, historical chart and market cap based on data from exchanges. </p>
             <h2 id="cryptomania"><a href="#cryptomania">What is cryptomania box?</a></h2>
             <p>The cryptomania box is one building block of the pyramid that is made of 200 such blocks with the dimensions:</p>
             <ul>
@@ -417,7 +424,7 @@
         </div>
         <div>
             <img src="images/cryptomania.jpg" alt="Cryptomania box - Papereum" width="100%">
-            <p>Figure 2. Cryptomania box</p>
+            <p>Figure 3. Cryptomania box</p>
         </div>
         <div class="section">
             <blockquote>
@@ -725,10 +732,65 @@
             </tr>
         </table>
         <div class="section">
+            <h1 id="papereum-symbol"><a href="#papereum-symbol">Papereum symbol</a></h1>
+            <div style="font-size: 140pt; color: #fff; ">
+                <svg
+                        viewBox="0 0 26.458334 45.19318"
+                        height="125"
+                        width="100">
+                    <g
+                            transform="translate(-117.36318,-12.882177)"
+                            id="layer1">
+                        <g
+                                style="fill:#ffffff;fill-opacity:1"
+                                transform="matrix(2.0004789,0,0,2.0004789,219.81609,-262.25917)"
+                                id="layer1-7">
+                            <path
+                                    style="fill:#ffffff;fill-opacity:1;stroke-width:0.26458332"
+                                    d="m -48.96417,149.11353 c 1.16523,1.02552 2.6924,1.64941 4.36298,1.64941 3.64649,0 6.613,-2.96624 6.613,-6.61247 0,-3.64622 -2.96651,-6.61273 -6.613,-6.61273 -3.64649,0 -6.613,2.96625 -6.613,6.61273 v 15.97845 h 13.20827 v -2.25001 h -10.95825 v -1.93966 h 10.95825 v -2.25002 h -10.95825 z m 4.36298,-9.32577 c 2.40586,0 4.36298,1.95712 4.36298,4.36271 0,2.40559 -1.95712,4.36245 -4.36298,4.36245 -2.40586,0 -4.36298,-1.95686 -4.36298,-4.36245 0,-2.40559 1.95712,-4.36271 4.36298,-4.36271 z"
+                                    id="path815"/>
+                        </g>
+                    </g>
+                </svg>
+                <span id="papereumSymbolCounter" style="display: inline-block;"></span>
+            </div>
+            <script>
+                var count = 0;
+                var countMax = 100000;
+
+                function startCount() {
+                    if (count < countMax) {
+                        count = Math.floor(count * 1.1) + 1;
+                        papereumSymbolCounter.textContent = count;
+                        requestAnimationFrame(startCount);
+                    } else {
+                        papereumSymbolCounter.textContent = '100000';
+                    }
+                }
+
+                window.addEventListener('scroll', function(e) {
+                    var boundingClientRect = papereumSymbolCounter.getBoundingClientRect();
+                    if (count === 0 && boundingClientRect) {
+                        var videoTop = boundingClientRect.top;
+                        var videoHeight = papereumSymbolCounter.offsetHeight;
+
+                        if (videoTop > -videoHeight && videoTop < window.innerHeight * .8) {
+                            count = 1;
+
+                            setTimeout(function() {
+                                requestAnimationFrame(startCount);
+                            }, 200);
+                        }
+                    }
+                });
+            </script>
+            <p>Here you can download <a href="resources/papereum-symbol.png" target="_blank">Papereum symbol in PNG</a>,
+                <a href="resources/papereum-symbol.pdf" target="_blank">PDF</a>
+                or <a href="resources/papereum-symbol.svg" target="_blank">SVG</a>.</p>
             <h1 id="most-expensive-art"><a href="#most-expensive-art" title="Most expensive art">Most expensive art</a></h1>
-            <p><b>How "<a
+            <p>How "<a
                     href="https://en.wikipedia.org/wiki/Salvator_Mundi_(Leonardo)#Rediscovery_and_restoration"
-                    target="_blank">Salvator Mundi</a>" Went From £45 to $450 Million in 59 Years:</b></p>
+                    target="_blank">Salvator Mundi</a>" Went From £45 to $450 Million in 59 Years:</p>
             <ul>
                 <li><span><b>1958</b> - Salvator Mundi pops up at a Sotheby's London auction on June 25, 1958. Attributed to
                                         Boltraffio, who worked in da Vinci's studio, it sells for £45 to someone named "Kuntz."</span>
