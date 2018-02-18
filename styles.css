@@ -357,17 +357,21 @@ p {
     fill: #eb3349;
 }
 
-.logo {
+.logo,
+.logo-fixed {
     display: block;
-    position: absolute;
-    top: -46px;
-    left: 0;
     background: url(images/papereum.svg) 0 20px no-repeat;
     background-size: 100%;
     width: 128px;
-    height: 200px;
     transition: all .3s ease;
     cursor: pointer;
+}
+
+.logo {
+    height: 200px;
+    position: absolute;
+    top: -46px;
+    left: 0;
 }
 
 .logo:hover {
