@@ -44,6 +44,7 @@
             position: relative;
         }
 
+        .header,
         .logo-fixed {
             height: 140px;
         }
@@ -361,7 +362,7 @@
                         <div style="margin-bottom: 1em;">
                             <h1>Payment method &ndash; ETH (Smart Contract)</h1>
                         </div>
-                        <p>Send ETH to our Smart Contract address and get PPRM tokens to&nbsp;your&nbsp;wallet.</p>
+                        <p>Send ETH to our Smart Contract address and get PPRM tokens to&nbsp;your&nbsp;wallet. </p>
                         <script>
                             document.addEventListener("click", function () {
                                 qrCode.style.display = 'none';
@@ -402,7 +403,9 @@
                             <li class="tokensale-warning">DO NOT send ETH directly from any exchange addresses! </li>
                             <li>Please make sure to have a valid ERC20 compatible Ethereum address to receive your tokens.</li>
                             <li>Set gas limit 200,000 GAS and 30 GWEI GAS PRICE.</li>
-                            <li>Use MyEtherWallet, MetaMask or other compatible wallets. <br>Explore transactions on <a target="_blank" href="https://etherscan.io/address/0x71b814e3f3cb4f75f1d55dcd535e77550fcfc5b3">Etherscan.io</a>.</li>
+                            <li>Use MyEtherWallet, MetaMask or other compatible wallets. </li>
+                            <li>The contract source code is <a target="_blank" href="https://etherscan.io/address/0x71b814e3f3cb4f75f1d55dcd535e77550fcfc5b3#code">published
+                                and verified on etherscan.io</a> so it's fully transparent.</li>
                         </ul>
                     </div>
                 </div>
@@ -476,7 +479,8 @@
     WebFontConfig = {
         google: {
             families: [
-                'Roboto:400,500,700'
+                'Roboto:400,500,700',
+                'Open Sans:600,800'
             ]
         }
     };
